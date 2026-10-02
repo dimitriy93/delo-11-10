@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="Placeholder: сердце">
+  <!--
+    PLACEHOLDER — замени этот файл настоящим изображением сердца,
+    сохранив имя public/photos/heart.svg (см. src/data/finale.ts).
+    Требование к замене: квадратное изображение, которое после сборки
+    15 плиток 4×4 читается как цельное сердце; правая нижняя клетка
+    (x 600–800, y 600–800) должна оставаться фоном — её закрывает
+    последний фрагмент, который игра вставляет сама после сборки.
+  -->
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="40%" r="80%">
+      <stop offset="0%" stop-color="#2b241a"/>
+      <stop offset="100%" stop-color="#14110c"/>
+    </radialGradient>
+    <linearGradient id="body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#cf5a4e"/>
+      <stop offset="45%" stop-color="#a63a2c"/>
+      <stop offset="100%" stop-color="#64201c"/>
+    </linearGradient>
+    <linearGradient id="rim" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e5c68a"/>
+      <stop offset="100%" stop-color="#8a6a34"/>
+    </linearGradient>
+    <filter id="soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+  </defs>
+
+  <rect width="800" height="800" fill="url(#bg)"/>
+
+  <!-- тонкие концентрические круги — фон -->
+  <g fill="none" stroke="#c9a15f" stroke-opacity="0.1">
+    <circle cx="400" cy="380" r="330"/>
+    <circle cx="400" cy="380" r="250"/>
+    <circle cx="400" cy="380" r="170"/>
+  </g>
+
+  <!-- тёплое свечение за сердцем -->
+  <ellipse cx="400" cy="360" rx="260" ry="230" fill="#c9a15f" opacity="0.14" filter="url(#soft)"/>
+
+  <!-- сердце -->
+  <path d="M400 640 C 250 525 158 420 158 302 C158 216 221 162 292 162 C341 162 380 190 400 230 C420 190 459 162 508 162 C579 162 642 216 642 302 C642 420 550 525 400 640 Z"
+        fill="url(#body)" stroke="url(#rim)" stroke-width="10"/>
+
+  <!-- блик -->
+  <ellipse cx="300" cy="270" rx="70" ry="46" fill="#f0e7d3" opacity="0.3" filter="url(#soft)" transform="rotate(-24 300 270)"/>
+
+  <!-- прожилки на сердце -->
+  <g fill="none" stroke="#f0e7d3" stroke-opacity="0.16" stroke-width="5" stroke-linecap="round">
+    <path d="M400 600 C 340 520 300 460 300 390"/>
+    <path d="M400 560 C 460 480 500 430 500 360"/>
+    <path d="M255 300 C 280 260 320 235 360 230"/>
+  </g>
+
+  <!-- золотые искры -->
+  <g fill="#e5c68a">
+    <path d="M132 150 l6 16 16 6 -16 6 -6 16 -6 -16 -16 -6 16 -6 Z" opacity="0.8"/>
+    <path d="M668 120 l5 13 13 5 -13 5 -5 13 -5 -13 -13 -5 13 -5 Z" opacity="0.7"/>
+    <path d="M690 470 l5 13 13 5 -13 5 -5 13 -5 -13 -13 -5 13 -5 Z" opacity="0.6"/>
+    <path d="M120 470 l5 13 13 5 -13 5 -5 13 -5 -13 -13 -5 13 -5 Z" opacity="0.6"/>
+    <path d="M560 700 l4 11 11 4 -11 4 -4 11 -4 -11 -11 -4 11 -4 Z" opacity="0.5"/>
+  </g>
+
+  <text x="400" y="776" text-anchor="middle" font-family="Georgia, serif" font-size="20" fill="#857a61">PLACEHOLDER — замени файл: public/photos/heart.svg</text>
+</svg>
